@@ -2,6 +2,10 @@
    margin: 10px;
  }
 
+ h4 {
+   padding: 20px;
+ }
+
  .lenderForm{
    display: flex;
    justify-content: flex-end;
@@ -9,6 +13,17 @@
 
  .lenderForm:last-child {
    flex-wrap: wrap;
+ }
+
+ .quotesHeader {
+   display: flex;
+   flex-direction: row;
+ }
+
+ .quotesDiv {
+   width: 75%;
+   display: flex;
+   justify-content: center;
  }
 
 .showQuotes {

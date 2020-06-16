@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form'
 
 const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
       <div className="col-sm-10 cold-md-8 mx-auto mt-5">
-        <Form className= 'lenderForm' onSubmit={handleSubmit}>
+        <Form className= 'lenderForm'>
         <Form.Row className='loanFormRow'>
             <Form.Group controlId='loan size'>
               <Form.Label>Loan Size</Form.Label>
@@ -60,7 +60,7 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
             </Form.Control>
             </Form.Group>
           </Form.Row>
-            <button className='showQuotes' type="button">Quote Rates</button>
+            <button className='showQuotes' type="button" onClick={handleSubmit}>Quote Rates</button>
         </Form>
       </div>
 )
