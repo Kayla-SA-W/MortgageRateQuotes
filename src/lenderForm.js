@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
 
@@ -61,10 +60,7 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
           </Form.Control>
           </Form.Group>
 
-          <button type="button">Quote Rates</button>
-          <Link to={cancelPath}>
-            <button>Cancel</button>
-          </Link>
+          <button className='showQuotes' type="button">Quote Rates</button>
         </Form>
       </div>
     </div>

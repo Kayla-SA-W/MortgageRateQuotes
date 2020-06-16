@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
+import LenderGenerate from './lenderGenerate.js'
 
 class App extends Component {
   constructor () {
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <div>
         <h1> Mortgage Rate Quote Simulator </h1>
+        <LenderGenerate />
       </div>
     );
   }
