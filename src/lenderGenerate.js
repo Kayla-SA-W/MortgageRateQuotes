@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 import LenderForm from './lenderForm.js'
 
@@ -26,20 +25,24 @@ class LenderGenerate extends Component {
   }
 
   handleSubmit = event => { // call to api
-    axios({
-      url: 'https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes',
+    const { lender } = this.state
+    console.log(this.state.lender)
+    fetch('https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes?loanSize='+lender.loanSize+'&creditScore='+ lender.creditScore + '&propertyType=' +lender.propertyType + '&occupancy=' + lender.occupancy, {
       method: 'GET',
       headers: {
-        Authorization: `OU-AUTH ` // add auth key here
+        'Content-Type': 'application/json',
+        'Authorization': 'OU-AUTH'
       }
     })
-    .then(res => this.setState({ quotes: res.data.rateQuotes }))
+    .then(res => this.setState({ quotes: res.rateQuotes }))
     .catch(console.error)
   }
 
   render () {
     const { handleChange, handleSubmit } = this // deconstruct handlechange and handlesubmit from this
-    const { lender } = this.state // deconstruct lender from state
+    const { lender, quotes } = this.state // deconstruct lender from state
+
+
     return (
       <div>
         <LenderForm
@@ -55,6 +58,9 @@ class LenderGenerate extends Component {
             <h4> Closing Cost </h4>
             <h4> Monthly Payment </h4>
             <h4> APR </h4>
+          </div>
+          <div className='quotesBody'>
+            {quotes}
           </div>
         </div>
       </div>

@@ -38,10 +38,11 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
             placeholder=''
             onChange={handleChange}
             >
-            <option>Single Family</option>
+            <option>select</option>
+            <option>SingleFamily</option>
             <option>Condo</option>
             <option>TownHouse</option>
-            <option>Multifamily</option>
+            <option>MultiFamily</option>
             </Form.Control>
           </Form.Group>
 
@@ -54,6 +55,7 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
               placeholder=''
               onChange={handleChange}
             >
+              <option>select</option>
               <option>Primary</option>
               <option>Secondary</option>
               <option>Investment</option>
