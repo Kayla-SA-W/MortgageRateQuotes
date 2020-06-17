@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 // form to be generated on lenderGenerate
 
 const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
-      <div className="col-sm-10 cold-md-8 mx-auto mt-5">
+      <div className="col-sm-10 cold-md-8 mx-auto mt-5 formContainer">
         <Form className= 'lenderForm'>
         <Form.Row className='loanFormRow'>
             <Form.Group controlId='loan size'>
@@ -41,7 +41,7 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
             <option>select</option>
             <option>SingleFamily</option>
             <option>Condo</option>
-            <option>TownHouse</option>
+            <option>Townhouse</option>
             <option>MultiFamily</option>
             </Form.Control>
           </Form.Group>
