@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import LenderForm from './lenderForm.js'
 
@@ -12,7 +13,8 @@ class LenderGenerate extends Component {
         creditScore: '',
         occupancy:''
       },
-      quotes: []
+      quotes: [],
+      loading: true
     }
   }
 
@@ -26,22 +28,21 @@ class LenderGenerate extends Component {
 
   handleSubmit = event => { // call to api
     const { lender } = this.state
-    console.log(this.state.lender)
-    fetch('https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes?loanSize='+lender.loanSize+'&creditScore='+ lender.creditScore + '&propertyType=' +lender.propertyType + '&occupancy=' + lender.occupancy, {
+    axios({
+      url: 'https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes?loanSize='+lender.loanSize+'&creditScore='+ lender.creditScore + '&propertyType=' +lender.propertyType + '&occupancy=' + lender.occupancy,
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'OU-AUTH'
       }
     })
-    .then(res => this.setState({ quotes: res.rateQuotes }))
+    .then(res => console.log(res))
     .catch(console.error)
   }
 
   render () {
     const { handleChange, handleSubmit } = this // deconstruct handlechange and handlesubmit from this
     const { lender, quotes } = this.state // deconstruct lender from state
-
 
     return (
       <div>
