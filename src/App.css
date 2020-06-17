@@ -11,6 +11,10 @@
    flex-wrap: wrap;
  }
 
+ .loanFormRow {
+   justify-content: flex-end;
+ }
+
  .quotesHeader {
    display: flex;
    flex-direction: row;
