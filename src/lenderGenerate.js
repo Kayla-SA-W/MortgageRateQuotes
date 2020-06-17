@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import shortid from 'shortid'
 
 import LenderForm from './lenderForm.js'
 
@@ -49,7 +50,7 @@ class LenderGenerate extends Component {
       quotesJsx = <p>Please input lender information</p> // show 'loading'
     } else if (quotes.length > 0) { // if length is greater than one
       quotesJsx = quotes.map(quote => ( // map over quotes to show properties
-        <li key={quote.id} className='quotesProperties'>
+        <li key={shortid.generate()} className='quotesProperties'>
           <h4> {(quote.lenderName).substring(0, 15)} </h4>
           <h4> {quote.loanType} </h4>
           <h4> {(quote.interestRate).toFixed(3)}% </h4>
