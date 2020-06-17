@@ -52,6 +52,14 @@
    margin-inline-end: 0px;
  }
 
+ .quotesProperties {
+    display: flex;
+    border-bottom: 2px solid gray;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    color: #143f3d;
+ }
+
 .showQuotes {
   background-color: #143f3d;
   color: white;
