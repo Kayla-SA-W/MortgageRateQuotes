@@ -36,33 +36,51 @@ class LenderGenerate extends Component {
         'Authorization': 'OU-AUTH'
       }
     })
-    .then(res => console.log(res))
+    .then(res => this.setState({ quotes: res.data.rateQuotes, loading: false }))
     .catch(console.error)
   }
 
   render () {
     const { handleChange, handleSubmit } = this // deconstruct handlechange and handlesubmit from this
     const { lender, quotes } = this.state // deconstruct lender from state
+    let quotesJsx
+
+    if (this.state.loading) { // if loading is true
+      quotesJsx = <p>Please input lender information</p> // show 'loading'
+    } else if (quotes.length > 0) { // if length is greater than one
+      quotesJsx = quotes.map(quote => ( // map over quotes to show properties
+        <li key={quote.id} className='quotesProperties'>
+          <h4> {(quote.lenderName).substring(0, 15)} </h4>
+          <h4> {quote.loanType} </h4>
+          <h4> {(quote.interestRate).toFixed(3)}% </h4>
+          <h4> ${Math.round(quote.closingCosts)} </h4>
+          <h4> ${Math.round(quote.monthlyPayment)} </h4>
+          <h4> {(quote.apr).toFixed(3)}% </h4>
+        </li>
+      ))
+    } else {
+      quotesJsx = <p>No Quotes To Available</p>
+    }
 
     return (
-      <div>
+      <div className='mortgageEstimator'>
         <LenderForm
           lender={lender}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           cancelPath="/" />
         <div className='quotesDiv'>
-          <div className='quotesHeader'>
-            <h4> Lender </h4>
-            <h4> Product </h4>
-            <h4> Rate </h4>
-            <h4> Closing Cost </h4>
-            <h4> Monthly Payment </h4>
-            <h4> APR </h4>
-          </div>
-          <div className='quotesBody'>
-            {quotes}
-          </div>
+          <ul>
+            <li className='quotesHeader'>
+            <h4 className='lender'> Lender </h4>
+            <h4 className='product'> Product </h4>
+            <h4 className='rate'> Rate </h4>
+            <h4 className='closingCost'> Closing Cost </h4>
+            <h4 className='monthlyPay'> Monthly Payment </h4>
+            <h4 className='apr'> APR </h4>
+            </li>
+            {quotesJsx}
+          </ul>
         </div>
       </div>
         )
