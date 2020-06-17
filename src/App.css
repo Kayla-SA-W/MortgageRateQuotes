@@ -1,3 +1,7 @@
+.closingCost, .monthlyPay, .rate {
+   width: 53px;
+ }
+
 .form-group {
    margin: 10px;
  }
