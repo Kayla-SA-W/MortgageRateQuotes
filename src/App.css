@@ -2,10 +2,6 @@
    margin: 10px;
  }
 
- h4 {
-   padding: 20px;
- }
-
  .lenderForm{
    display: flex;
    justify-content: flex-end;
