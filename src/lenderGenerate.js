@@ -33,7 +33,7 @@ class LenderGenerate extends Component {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'OU-AUTH'
+        'Authorization': 'OU-AUTH ' + process.env.REACT_APP_API_KEY
       }
     })
     .then(res => this.setState({ quotes: res.data.rateQuotes, loading: false }))
