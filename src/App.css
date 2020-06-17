@@ -6,6 +6,10 @@
    margin: 10px;
  }
 
+ .lender {
+    width: 124px;
+  }
+
  .lenderForm{
    display: flex;
    justify-content: flex-end;
