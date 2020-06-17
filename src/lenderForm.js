@@ -8,7 +8,7 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
         <Form className= 'lenderForm'>
         <Form.Row className='loanFormRow'>
             <Form.Group controlId='loan size'>
-              <Form.Label>Loan Size</Form.Label>
+              <Form.Label>Loan Size </Form.Label>
               <input
                 placeholder="$450,000"
                 value={lender.loanSize}
@@ -19,7 +19,7 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
             </Form.Group>
 
             <Form.Group controlId='credit score'>
-              <Form.Label>Credit Score</Form.Label>
+              <Form.Label>Credit Score </Form.Label>
               <input
                 placeholder="680"
                 value={lender.creditScore}
@@ -30,7 +30,7 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
           </Form.Row>
           <Form.Row className='loanFormRow'>
           <Form.Group controlId='property type'>
-            <Form.Label>Property Type</Form.Label>
+            <Form.Label>Property Type </Form.Label>
             <Form.Control as="select"
             value={lender.propertyType}
             name='propertyType'
@@ -47,7 +47,7 @@ const LenderForm = ({ lender, handleSubmit, handleChange, cancelPath }) => (
           </Form.Group>
 
             <Form.Group controlId='occupancy'>
-              <Form.Label>Occupancy</Form.Label>
+              <Form.Label>Occupancy </Form.Label>
               <Form.Control as="select"
               value={lender.occupancy}
               name='occupancy'
