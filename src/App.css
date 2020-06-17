@@ -30,15 +30,26 @@
    justify-content: center;
  }
 
- .quotesHeader {
-   display: flex;
-   flex-direction: row;
- }
-
  .quotesDiv {
-   width: 75%;
+   border: 2px solid gray;
    display: flex;
    justify-content: center;
+   align-items: center;
+   width: 75%;
+   flex-wrap: wrap;
+ }
+ 
+ .quotesHeader {
+   border-bottom: 2px solid gray;
+   display: flex;
+   flex-direction: row;
+   flex-grow: 1;
+   justify-content: space-evenly;
+   list-style-type: disc;
+   margin-block-start: 1em;
+   margin-block-end: 1em;
+   margin-inline-start: 0px;
+   margin-inline-end: 0px;
  }
 
 .showQuotes {
