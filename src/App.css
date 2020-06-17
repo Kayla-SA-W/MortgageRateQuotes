@@ -13,6 +13,7 @@
  .lenderForm{
    display: flex;
    justify-content: flex-end;
+   margin-bottom: 30px;
  }
 
  .lenderForm:last-child {
