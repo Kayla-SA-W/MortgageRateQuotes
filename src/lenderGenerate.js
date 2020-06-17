@@ -73,11 +73,11 @@ class LenderGenerate extends Component {
         <div className='quotesDiv'>
           <ul>
             <li className='quotesHeader'>
-            <h4 className='lender'> Lender </h4>
-            <h4 className='product'> Product </h4>
-            <h4 className='rate'> Rate </h4>
-            <h4 className='closingCost'> Closing Cost </h4>
-            <h4 className='monthlyPay'> Monthly Payment </h4>
+            <h4 className='lender'> LENDER </h4>
+            <h4 className='product'> PRODUCT </h4>
+            <h4 className='rate'> RATE </h4>
+            <h4 className='closingCost'> CLOSING COST </h4>
+            <h4 className='monthlyPay'> MONTHLY PAYMENT </h4>
             <h4 className='apr'> APR </h4>
             </li>
             {quotesJsx}
