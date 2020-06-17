@@ -38,7 +38,7 @@
    width: 75%;
    flex-wrap: wrap;
  }
- 
+
  .quotesHeader {
    border-bottom: 2px solid gray;
    display: flex;
@@ -55,4 +55,10 @@
 .showQuotes {
   background-color: #143f3d;
   color: white;
+}
+
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;  /* ul takes full width of the div  */
 }
