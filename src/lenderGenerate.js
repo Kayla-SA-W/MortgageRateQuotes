@@ -8,27 +8,13 @@ class LenderGenerate extends Component {
   constructor () {
     super()
     this.state = {
-      lender: {
-        loanSize: '',
-        propertyType: '',
-        creditScore: '',
-        occupancy:''
-      },
       quotes: [],
       loading: true
     }
   }
 
-  handleChange = event => {
-    const updatedField = { [event.target.name]: event.target.value } // allows user to see text as typing
-
-    const editedLender = Object.assign(this.state.lender, updatedField) // update lender with the updated field text
-
-    this.setState({ lender: editedLender }) // set state lender to users input
-  }
-
   handleSubmit = event => { // call to api
-    const { lender } = this.state
+    const { lender } = this.props
     axios({
       url: 'https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes?loanSize='+lender.loanSize+'&creditScore='+ lender.creditScore + '&propertyType=' +lender.propertyType + '&occupancy=' + lender.occupancy,
       method: 'GET',
@@ -42,8 +28,9 @@ class LenderGenerate extends Component {
   }
 
   render () {
-    const { handleChange, handleSubmit } = this // deconstruct handlechange and handlesubmit from this
-    const { lender, quotes } = this.state // deconstruct lender from state
+    const { handleSubmit } = this // deconstruct handlechange and handlesubmit from this
+    const { quotes } = this.state // deconstruct lender from state
+    const { lender, handleChange } = this.props;
     let quotesJsx
 
     if (this.state.loading) { // if loading is true
